@@ -17,8 +17,8 @@ ENV JRE_HOME /usr/java/latest
 RUN yum install -y unzip wget curl sudo
 RUN mkdir /tmp/astah
 WORKDIR /tmp/astah/
-RUN wget http://members.change-vision.com/files/_ixGz-h0VE3zrzYd2po3KvwbsVdaC2mCl/astah_community/7_0_0/astah-community-7_0_0-846701.zip 
-RUN unzip *.zip
+ADD astah-community-7_0_0-846701.zip /tmp/astah/
+RUN unzip astah-community-7_0_0-846701.zip
 RUN mv /tmp/astah /usr/local/
 RUN ls -l /usr/local/astah
 RUN rm -f /usr/local/astah/astah-community-7_0_0-846701.zip
